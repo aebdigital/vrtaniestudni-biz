@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -109,37 +110,47 @@ export default function CenaPage() {
 
       {/* Main Price Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-light rounded-lg p-8 md:p-12 text-center shadow-[0_4px_40px_-8px_rgba(88,145,232,0.25)]">
-            <p className="text-gray-600 text-lg mb-2">Cena vŕtania studne</p>
-            <div className="text-6xl md:text-8xl font-bold text-primary mb-2">
-              od 65 <span className="text-3xl md:text-4xl">EUR</span>
-            </div>
-            <p className="text-2xl text-dark font-medium mb-4">
-              za 1 bežný meter
-            </p>
-            <div className="inline-block bg-primary text-white rounded-full px-6 py-2 text-sm font-bold mb-8">
-              Najlacnejšie touto technológiou na trhu
-            </div>
-            <div className="border-t border-gray-200 pt-8">
-              <p className="text-gray-600 mb-6">
-                Pre presnú cenovú ponuku nás kontaktujte. Cena závisí od
-                geologických podmienok, hĺbky vŕtania a doplnkových služieb.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/kontakt"
-                  className="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-md transition-colors"
-                >
-                  Žiadať o cenovú ponuku
-                </Link>
-                <a
-                  href="tel:+421907872591"
-                  className="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-md transition-colors"
-                >
-                  0907 872 591
-                </a>
+        <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="bg-gray-light rounded-lg p-8 md:p-12 text-center shadow-[0_4px_40px_-8px_rgba(88,145,232,0.25)]">
+              <p className="text-gray-600 text-lg mb-2">Cena vŕtania studne</p>
+              <div className="text-6xl md:text-8xl font-bold text-primary mb-2">
+                od 65 <span className="text-3xl md:text-4xl">EUR</span>
               </div>
+              <p className="text-2xl text-dark font-medium mb-4">
+                za 1 bežný meter
+              </p>
+              <div className="inline-block bg-primary text-white rounded-full px-6 py-2 text-sm font-bold mb-8">
+                Najlacnejšie touto technológiou na trhu
+              </div>
+              <div className="border-t border-gray-200 pt-8">
+                <p className="text-gray-600 mb-6">
+                  Pre presnú cenovú ponuku nás kontaktujte. Cena závisí od
+                  geologických podmienok, hĺbky vŕtania a doplnkových služieb.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href="/kontakt"
+                    className="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-md transition-colors"
+                  >
+                    Žiadať o cenovú ponuku
+                  </Link>
+                  <a
+                    href="tel:+421907872591"
+                    className="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-md transition-colors"
+                  >
+                    0907 872 591
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="relative h-[500px] rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)]">
+              <Image
+                src="/images/gallery/vrtanie-studni-13.jpg"
+                alt="Vŕtanie studní - proces"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
@@ -147,42 +158,52 @@ export default function CenaPage() {
 
       {/* What's included */}
       <section className="py-16 bg-gray-light">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-dark mb-10">
             Čo je zahrnuté v cene
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              "Obhliadka miesta a posúdenie",
-              "Vŕtacie práce",
-              "Inštalácia PVC alebo oceľových rúr",
-              "Zásyp a cementácia",
-              "Čerpanie a čistenie studne",
-              "Doprava po celom Slovensku",
-              "Konzultácia a poradenstvo",
-              "Garancia nájdenia vody",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3 bg-white rounded-md p-4 shadow-[0_1px_10px_-2px_rgba(0,0,0,0.06)]"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-primary shrink-0"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="relative h-[450px] rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)]">
+              <Image
+                src="/images/gallery/vrtanie-studni-3-1.jpg"
+                alt="Vŕtanie studní - technika"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                "Obhliadka miesta a posúdenie",
+                "Vŕtacie práce",
+                "Inštalácia PVC alebo oceľových rúr",
+                "Zásyp a cementácia",
+                "Čerpanie a čistenie studne",
+                "Doprava po celom Slovensku",
+                "Konzultácia a poradenstvo",
+                "Garancia nájdenia vody",
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3 bg-white rounded-md p-4 shadow-[0_1px_10px_-2px_rgba(0,0,0,0.06)]"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="text-dark font-medium">{item}</span>
-              </div>
-            ))}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-primary shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span className="text-dark font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

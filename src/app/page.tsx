@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ParallaxHero from "@/components/ParallaxHero";
 
 const benefits = [
   {
@@ -184,18 +185,11 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center pt-20">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/vrtanie-studni-8.jpg"
-            alt="Vŕtanie studní"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
-        <div className="relative max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <ParallaxHero
+        imageSrc="/images/vrtanie-studni-8.jpg"
+        imageAlt="Vŕtanie studní"
+      >
+        <div className="relative max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Vŕtanie studní lacno.
             <br />
@@ -214,7 +208,7 @@ export default function HomePage() {
             Kontaktujte nás
           </Link>
         </div>
-      </section>
+      </ParallaxHero>
 
       {/* Benefits Cards */}
       <section className="py-16 bg-white">

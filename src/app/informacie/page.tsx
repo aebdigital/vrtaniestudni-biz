@@ -33,112 +33,138 @@ export default function InformaciePage() {
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Studna section */}
+      <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Studna + Hlbka section with photo */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-dark mb-4 border-l-2 border-primary pl-4">
-            Studňa
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            Je zariadenie na zachytávanie podzemnej vody. Studne sa budujú už od
-            staroveku. Studne kopali, hĺbili banícnym spôsobom alebo narážali.
-          </p>
-        </section>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <div>
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold text-dark mb-4 border-l-2 border-primary pl-4">
+                  Studňa
+                </h2>
+                <p className="text-gray-700 leading-relaxed">
+                  Je zariadenie na zachytávanie podzemnej vody. Studne sa budujú už od
+                  staroveku. Studne kopali, hĺbili banícnym spôsobom alebo narážali.
+                </p>
+              </div>
 
-        {/* Hlbka section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-dark mb-4 border-l-2 border-primary pl-4">
-            Do akej hĺbky je treba studňu vŕtať
-          </h2>
-          <div className="bg-gray-light rounded-md p-6 mb-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center p-4">
-                <div className="text-4xl font-bold text-primary mb-2">
-                  8 - 45 m
+              <div>
+                <h2 className="text-2xl font-bold text-dark mb-4 border-l-2 border-primary pl-4">
+                  Do akej hĺbky je treba studňu vŕtať
+                </h2>
+                <div className="bg-gray-light rounded-md p-6 mb-6">
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="text-center p-3">
+                      <div className="text-3xl font-bold text-primary mb-1">
+                        8 - 45 m
+                      </div>
+                      <p className="text-gray-600 text-xs">Rozsah hĺbky vŕtania</p>
+                    </div>
+                    <div className="text-center p-3">
+                      <div className="text-3xl font-bold text-primary mb-1">
+                        20+ m
+                      </div>
+                      <p className="text-gray-600 text-xs">
+                        Minimum pre celoročné používanie
+                      </p>
+                    </div>
+                    <div className="text-center p-3">
+                      <div className="text-3xl font-bold text-primary mb-1">
+                        30+ m
+                      </div>
+                      <p className="text-gray-600 text-xs">
+                        Pre komerčné účely
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-gray-600 text-sm">Rozsah hĺbky vŕtania</p>
-              </div>
-              <div className="text-center p-4">
-                <div className="text-4xl font-bold text-primary mb-2">
-                  20+ m
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p>
+                    Hĺbka vŕtania studne sa pohybuje od 8 do 45 metrov v závislosti od
+                    geologických podmienok a účelu použitia.
+                  </p>
+                  <p>
+                    Pre dlhodobé celoročné použitie odporúčame minimum 20 metrov. Pre
+                    víkendové použitie môže byť hĺbka aj menšia.
+                  </p>
+                  <p>
+                    Pre komerčné účely je vhodná hĺbka nad 30 metrov.
+                  </p>
+                  <p>
+                    <strong>
+                      Väčšinou sa nám podarí vodu nájsť do hĺbky 30 metrov.
+                    </strong>
+                  </p>
+                  <p className="bg-primary-light p-4 rounded-md border-l-4 border-primary">
+                    Podľa aktuálnej legislatívy nie sú do hĺbky 30 metrov potrebné
+                    žiadne administratívne povolenia.
+                  </p>
                 </div>
-                <p className="text-gray-600 text-sm">
-                  Minimum pre celoročné používanie
-                </p>
-              </div>
-              <div className="text-center p-4">
-                <div className="text-4xl font-bold text-primary mb-2">
-                  30+ m
-                </div>
-                <p className="text-gray-600 text-sm">
-                  Pre komerčné účely
-                </p>
               </div>
             </div>
-          </div>
-          <div className="space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              Hĺbka vŕtania studne sa pohybuje od 8 do 45 metrov v závislosti od
-              geologických podmienok a účelu použitia.
-            </p>
-            <p>
-              Pre dlhodobé celoročné použitie odporúčame minimum 20 metrov. Pre
-              víkendové použitie môže byť hĺbka aj menšia.
-            </p>
-            <p>
-              Pre komerčné účely je vhodná hĺbka nad 30 metrov.
-            </p>
-            <p>
-              <strong>
-                Väčšinou sa nám podarí vodu nájsť do hĺbky 30 metrov.
-              </strong>
-            </p>
-            <p className="bg-primary-light p-4 rounded-md border-l-4 border-primary">
-              Podľa aktuálnej legislatívy nie sú do hĺbky 30 metrov potrebné
-              žiadne administratívne povolenia.
-            </p>
+            <div className="relative h-[600px] rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)] lg:sticky lg:top-24">
+              <Image
+                src="/images/gallery/vrtanie-studni-14.jpg"
+                alt="Vŕtanie studní - vŕtacia súprava"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </section>
 
-        {/* Kvalita vody section */}
+        {/* Kvalita vody + Vrtana studna with photo */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-dark mb-4 border-l-2 border-primary pl-4">
-            Od čoho závisí kvalita vody
-          </h2>
-          <div className="space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              Kvalita vody závisí predovšetkým od lokality a zloženia hornín, cez
-              ktoré voda prechádza. Podzemná voda sa prirodne filtruje pri prechode
-              cez rôzne geologické vrstvy.
-            </p>
-            <p>
-              Znečistenie môže spôsobiť blízkosť septických jám, používanie
-              chemických hnojív v poľnohospodárstve alebo priemyselná činnosť v
-              okolí.
-            </p>
-            <p>
-              Pri vŕtaní studne je dôležité dodržať dostatočnú vzdialenosť od
-              potenciálnych zdrojov kontaminácie, aby bola zabezpečená čo
-              najvyššia kvalita získanej vody.
-            </p>
-          </div>
-        </section>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <div className="relative h-[450px] rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)] lg:sticky lg:top-24">
+              <Image
+                src="/images/gallery/vrtanie-studni-5-1.jpg"
+                alt="Vŕtanie studní - práca v teréne"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold text-dark mb-4 border-l-2 border-primary pl-4">
+                  Od čoho závisí kvalita vody
+                </h2>
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p>
+                    Kvalita vody závisí predovšetkým od lokality a zloženia hornín, cez
+                    ktoré voda prechádza. Podzemná voda sa prirodne filtruje pri prechode
+                    cez rôzne geologické vrstvy.
+                  </p>
+                  <p>
+                    Znečistenie môže spôsobiť blízkosť septických jám, používanie
+                    chemických hnojív v poľnohospodárstve alebo priemyselná činnosť v
+                    okolí.
+                  </p>
+                  <p>
+                    Pri vŕtaní studne je dôležité dodržať dostatočnú vzdialenosť od
+                    potenciálnych zdrojov kontaminácie, aby bola zabezpečená čo
+                    najvyššia kvalita získanej vody.
+                  </p>
+                </div>
+              </div>
 
-        {/* Vrtana studna section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-dark mb-4 border-l-2 border-primary pl-4">
-            Vŕtaná studňa
-          </h2>
-          <div className="space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              Vŕtaná studňa je najrozšírenejší typ studne. Vŕtané studne dosahujú
-              hĺbky väčšie ako 8 metrov s priemerom 100 až 300 mm.
-            </p>
-            <p>
-              Hlavné časti vŕtanej studne sú: pažnica (obkladová rúra),
-              perforácia (filtrová časť), kalník (usadzovacia zóna) a
-              stabilizačná vrstva (štrkový obsyp).
-            </p>
+              <div>
+                <h2 className="text-2xl font-bold text-dark mb-4 border-l-2 border-primary pl-4">
+                  Vŕtaná studňa
+                </h2>
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p>
+                    Vŕtaná studňa je najrozšírenejší typ studne. Vŕtané studne dosahujú
+                    hĺbky väčšie ako 8 metrov s priemerom 100 až 300 mm.
+                  </p>
+                  <p>
+                    Hlavné časti vŕtanej studne sú: pažnica (obkladová rúra),
+                    perforácia (filtrová časť), kalník (usadzovacia zóna) a
+                    stabilizačná vrstva (štrkový obsyp).
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -147,94 +173,102 @@ export default function InformaciePage() {
           <h2 className="text-2xl font-bold text-dark mb-4 border-l-2 border-primary pl-4">
             Výhody vŕtanej studne oproti studni kopanej
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {drilledAdvantages.map((advantage, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-3 bg-gray-light rounded-md p-4"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-primary shrink-0 mt-0.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {drilledAdvantages.map((advantage, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 bg-gray-light rounded-md p-4"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="text-dark font-medium">{advantage}</span>
-              </div>
-            ))}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-primary shrink-0 mt-0.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span className="text-dark font-medium">{advantage}</span>
+                </div>
+              ))}
+            </div>
+            <div className="relative h-[400px] rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)]">
+              <Image
+                src="/images/gallery/vrtanie-studni-8-1.jpg"
+                alt="Vŕtanie studní - hotová studňa"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </section>
 
-        {/* Postup section */}
+        {/* Postup section with photo */}
         <section className="mb-16">
           <h2 className="text-2xl font-bold text-dark mb-6 border-l-2 border-primary pl-4">
             Postup vŕtanej studne
           </h2>
-          <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <span className="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center shrink-0 font-bold">
-                1
-              </span>
-              <div>
-                <h3 className="font-bold text-dark text-lg">
-                  Kontakt telefonicky alebo emailom
-                </h3>
-                <p className="text-gray-600 mt-1">
-                  Prvý krok je kontaktovať nás telefonicky na čísle 0907 872 591
-                  alebo emailom na kralik.mato@gmail.com. Radi Vám zodpovieme
-                  všetky otázky.
-                </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <span className="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center shrink-0 font-bold">
+                  1
+                </span>
+                <div>
+                  <h3 className="font-bold text-dark text-lg">
+                    Kontakt telefonicky alebo emailom
+                  </h3>
+                  <p className="text-gray-600 mt-1">
+                    Prvý krok je kontaktovať nás telefonicky na čísle 0907 872 591
+                    alebo emailom na kralik.mato@gmail.com. Radi Vám zodpovieme
+                    všetky otázky.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center shrink-0 font-bold">
+                  2
+                </span>
+                <div>
+                  <h3 className="font-bold text-dark text-lg">
+                    Prípravné práce
+                  </h3>
+                  <p className="text-gray-600 mt-1">
+                    Obhliadka miesta, lokalizácia vhodného miesta na vŕtanie a
+                    vybavenie potrebných povolení. Posúdime geologické podmienky a
+                    navrhneme optimálne riešenie.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center shrink-0 font-bold">
+                  3
+                </span>
+                <div>
+                  <h3 className="font-bold text-dark text-lg">
+                    Realizácia studne
+                  </h3>
+                  <p className="text-gray-600 mt-1">
+                    Samotné vŕtacie práce, inštalácia rúr, zásyp, čerpanie a
+                    čistenie. Kompletná realizácia trvá zvyčajne 1-2 dni.
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <span className="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center shrink-0 font-bold">
-                2
-              </span>
-              <div>
-                <h3 className="font-bold text-dark text-lg">
-                  Prípravné práce
-                </h3>
-                <p className="text-gray-600 mt-1">
-                  Obhliadka miesta, lokalizácia vhodného miesta na vŕtanie a
-                  vybavenie potrebných povolení. Posúdime geologické podmienky a
-                  navrhneme optimálne riešenie.
-                </p>
-              </div>
+            <div className="relative h-[400px] rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)]">
+              <Image
+                src="/images/gallery/20160720_115757.jpg"
+                alt="Vŕtanie studní - postup prác"
+                fill
+                className="object-cover"
+              />
             </div>
-            <div className="flex items-start gap-4">
-              <span className="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center shrink-0 font-bold">
-                3
-              </span>
-              <div>
-                <h3 className="font-bold text-dark text-lg">
-                  Realizácia studne
-                </h3>
-                <p className="text-gray-600 mt-1">
-                  Samotné vŕtacie práce, inštalácia rúr, zásyp, čerpanie a
-                  čistenie. Kompletná realizácia trvá zvyčajne 1-2 dni.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Image */}
-        <section className="mb-16">
-          <div className="relative h-96 rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)]">
-            <Image
-              src="/images/vrtanie_studni06.jpg"
-              alt="Vŕtanie studní - pracovný proces"
-              fill
-              className="object-cover"
-            />
           </div>
         </section>
 
