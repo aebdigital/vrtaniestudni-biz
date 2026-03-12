@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import SeoSchema from "@/components/SeoSchema";
+import { seo, toMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Informácie o vŕtaní studní",
-  description:
-    "Všetko, čo potrebujete vedieť o vŕtaní studní - hĺbka, kvalita vody, výhody vŕtanej studne oproti kopanej a postup prác.",
-};
+export const metadata: Metadata = toMetadata(seo.informacie);
 
 const drilledAdvantages = [
   "Čistejšia a kvalitnejšia voda",
@@ -20,8 +18,10 @@ const drilledAdvantages = [
 export default function InformaciePage() {
   return (
     <>
+      <SeoSchema schema={seo.informacie.schema} />
+
       {/* Hero Banner */}
-      <section className="bg-primary py-16 pt-20">
+      <section className="hero-band py-16 pt-24">
         <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Informácie o vŕtaní studní
@@ -104,7 +104,7 @@ export default function InformaciePage() {
             </div>
             <div className="relative h-[600px] rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)] lg:sticky lg:top-24">
               <Image
-                src="/images/gallery/vrtanie-studni-14.jpg"
+                src="/images/gallery/external-new/vrtanie-studni01.jpg"
                 alt="Vŕtanie studní - vŕtacia súprava"
                 fill
                 className="object-cover"
@@ -118,7 +118,7 @@ export default function InformaciePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             <div className="relative h-[450px] rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)] lg:sticky lg:top-24">
               <Image
-                src="/images/gallery/vrtanie-studni-5-1.jpg"
+                src="/images/gallery/external-new/vrtanie-studni05.jpg"
                 alt="Vŕtanie studní - práca v teréne"
                 fill
                 className="object-cover"
@@ -200,7 +200,7 @@ export default function InformaciePage() {
             </div>
             <div className="relative h-[400px] rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)]">
               <Image
-                src="/images/gallery/vrtanie-studni-8-1.jpg"
+                src="/images/gallery/external-new/vrtanie-studni11.jpg"
                 alt="Vŕtanie studní - hotová studňa"
                 fill
                 className="object-cover"
@@ -225,9 +225,9 @@ export default function InformaciePage() {
                     Kontakt telefonicky alebo emailom
                   </h3>
                   <p className="text-gray-600 mt-1">
-                    Prvý krok je kontaktovať nás telefonicky na čísle 0907 872 591
-                    alebo emailom na kralik.mato@gmail.com. Radi Vám zodpovieme
-                    všetky otázky.
+                    Prvý krok je kontaktovať nás telefonicky na číslach 0907
+                    872 591 alebo 0902 681 203, prípadne emailom na
+                    kralik.mato@gmail.com. Radi Vám zodpovieme všetky otázky.
                   </p>
                 </div>
               </div>
@@ -263,7 +263,7 @@ export default function InformaciePage() {
             </div>
             <div className="relative h-[400px] rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)]">
               <Image
-                src="/images/gallery/20160720_115757.jpg"
+                src="/images/gallery/external-new/vrtanie-studni07.jpg"
                 alt="Vŕtanie studní - postup prác"
                 fill
                 className="object-cover"
@@ -281,12 +281,20 @@ export default function InformaciePage() {
             Neváhajte nás kontaktovať. Radi Vám poradíme a pripravíme cenovú
             ponuku na mieru.
           </p>
-          <a
-            href="tel:+421907872591"
-            className="inline-block bg-white text-primary font-bold py-3 px-8 rounded-md hover:bg-gray-100 transition-colors"
-          >
-            Zavolajte nám: 0907 872 591
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="tel:+421907872591"
+              className="inline-block bg-white text-primary font-bold py-3 px-8 rounded-md hover:bg-gray-100 transition-colors"
+            >
+              Zavolajte nám: 0907 872 591
+            </a>
+            <a
+              href="tel:+421902681203"
+              className="inline-block border border-white bg-transparent text-white font-bold py-3 px-8 rounded-md hover:bg-white/10 transition-colors"
+            >
+              Alebo: 0902 681 203
+            </a>
+          </div>
         </section>
       </div>
     </>

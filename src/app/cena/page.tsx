@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import SeoSchema from "@/components/SeoSchema";
+import { seo, toMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Cena vŕtanej studne",
-  description:
-    "Cena vŕtanej studne od 65 EUR za 1 bežný meter. Najlacnejšie touto technológiou na trhu. Doprava zdarma po celom Slovensku.",
-};
+export const metadata: Metadata = toMetadata(seo.cena);
 
 const reasons = [
   {
@@ -96,8 +94,10 @@ const reasons = [
 export default function CenaPage() {
   return (
     <>
+      <SeoSchema schema={seo.cena.schema} />
+
       {/* Hero Banner */}
-      <section className="bg-primary py-16 pt-20">
+      <section className="hero-band py-16 pt-24">
         <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Cena vŕtanej studne
@@ -130,7 +130,7 @@ export default function CenaPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
-                    href="/kontakt"
+                    href="/vrtanie-studni-kontakt"
                     className="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-md transition-colors"
                   >
                     Žiadať o cenovú ponuku
@@ -140,6 +140,12 @@ export default function CenaPage() {
                     className="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-md transition-colors"
                   >
                     0907 872 591
+                  </a>
+                  <a
+                    href="tel:+421902681203"
+                    className="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-3 px-8 rounded-md transition-colors"
+                  >
+                    0902 681 203
                   </a>
                 </div>
               </div>
@@ -239,7 +245,7 @@ export default function CenaPage() {
             Kontaktujte nás pre bezplatnú konzultáciu a cenovú ponuku na mieru.
           </p>
           <Link
-            href="/kontakt"
+            href="/vrtanie-studni-kontakt"
             className="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-4 px-10 rounded-md text-lg transition-colors"
           >
             Kontaktujte nás

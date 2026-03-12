@@ -147,7 +147,7 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
           </button>
 
           {/* Image */}
-          <div className="relative w-full h-full max-w-5xl max-h-[80vh] mx-16">
+          <div className="relative w-full h-full max-w-5xl max-h-[80vh] mx-4 sm:mx-16">
             <Image
               src={images[currentIndex].src}
               alt={images[currentIndex].alt}

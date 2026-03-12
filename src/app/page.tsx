@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ParallaxHero from "@/components/ParallaxHero";
+import SeoSchema from "@/components/SeoSchema";
+import { seo, toMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = toMetadata(seo.home);
 
 const benefits = [
   {
@@ -52,6 +57,15 @@ const advantages = [
     description:
       "Správne vybudovaná vŕtaná studňa slúži desiatky rokov s minimálnou údržbou.",
   },
+];
+
+const advantageCardImages = [
+  "gallery/external-new/vrtanie-studni01.jpg",
+  "gallery/external-new/vrtanie-studni03.jpg",
+  "gallery/external-new/vrtanie-studni04.jpg",
+  "gallery/external-new/vrtanie-studni06.jpg",
+  "gallery/external-new/vrtanie-studni10.jpg",
+  "gallery/external-new/vrtanie-studni12.jpg",
 ];
 
 const processSteps = [
@@ -184,29 +198,79 @@ const reasons = [
 export default function HomePage() {
   return (
     <>
+      <SeoSchema schema={seo.home.schema} />
+
       {/* Hero Section */}
       <ParallaxHero
-        imageSrc="/images/vrtanie-studni-8.jpg"
+        imageSrc="/images/gallery/external-new/vrtanie-studni05.jpg"
         imageAlt="Vŕtanie studní"
       >
-        <div className="relative max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-24 pt-32 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Vŕtanie studní lacno.
-            <br />
-            <span className="text-primary">Dopravu neúčtujeme!</span>
-            <br />
-            Garancia nájdenia vody.
-          </h1>
-          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-            Profesionálne vŕtanie studní po celom Slovensku od 65 EUR za 1
-            bežný meter
-          </p>
-          <Link
-            href="/kontakt"
-            className="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-4 px-10 rounded-md text-lg transition-colors shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.12)]"
-          >
-            Kontaktujte nás
-          </Link>
+        <div className="relative max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-14 sm:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.8fr)] gap-8 lg:gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <p className="eyebrow inline-flex rounded-md border border-white/30 bg-black/35 px-4 py-2 text-[11px] text-white/90 mb-5">
+                MQM stavebno obchodná spoločnosť s.r.o.
+              </p>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-[1.04] mb-6">
+                Vŕtanie studní po celom Slovensku
+                <br className="hidden sm:block" /> od{" "}
+                <span className="text-primary">65 EUR / m</span>
+              </h1>
+              <p className="text-base sm:text-xl text-gray-200 mb-7 max-w-2xl mx-auto lg:mx-0">
+                Profesionálna realizácia, doprava zdarma a garancia nájdenia
+                vody. Jednoduché, rýchle a bez zbytočných poplatkov.
+              </p>
+              <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
+                {["Doprava zdarma", "Garancia vody", "Studňa na kľúč"].map(
+                  (item) => (
+                    <span
+                      key={item}
+                      className="inline-flex items-center rounded-full border border-white/25 bg-black/30 px-4 py-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.08em] text-white/90"
+                    >
+                      {item}
+                    </span>
+                  ),
+                )}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                <Link
+                  href="/vrtanie-studni-kontakt"
+                  className="inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white font-bold py-4 px-10 rounded-md text-lg transition-colors shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.12)]"
+                >
+                  Kontaktujte nás
+                </Link>
+                <Link
+                  href="/vrtanie-studni-cena"
+                  className="inline-flex items-center justify-center border border-white/35 bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-md text-lg transition-colors"
+                >
+                  Cena od 65 EUR / m
+                </Link>
+              </div>
+            </div>
+
+            <aside className="rounded-md border border-primary/35 bg-[linear-gradient(160deg,rgba(18,15,13,0.82),rgba(18,15,13,0.66))] p-6 sm:p-7 backdrop-blur-sm shadow-[0_30px_56px_-34px_rgba(0,0,0,0.95)]">
+              <p className="eyebrow text-primary-light text-[11px] mb-3">
+                Rýchla obhliadka
+              </p>
+              <h2 className="text-2xl sm:text-3xl text-white leading-tight mb-4">
+                Nezáväzná konzultácia
+                <br />
+                do 24 hodín
+              </h2>
+              <a
+                href="tel:+421902681203"
+                className="inline-flex items-center justify-center w-full rounded-md border border-white/25 bg-primary/25 px-4 py-3 text-white font-bold text-lg hover:bg-primary/35"
+              >
+                0902 681 203
+              </a>
+              <ul className="mt-5 space-y-2 text-sm text-gray-200">
+                <li>• Doprava zdarma v rámci realizácie</li>
+                <li>• Garancia nájdenia vody</li>
+                <li>• Realizujeme po celom Slovensku</li>
+              </ul>
+            </aside>
+          </div>
         </div>
       </ParallaxHero>
 
@@ -243,9 +307,9 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              "vrtanie-studni-6.jpg",
-              "vrtanie-studni-7.jpg",
-              "vrtanie-studni-8.jpg",
+              "gallery/external-new/vrtanie-studni01.jpg",
+              "gallery/external-new/vrtanie-studni05.jpg",
+              "gallery/external-new/vrtanie-studni11.jpg",
             ].map((img, index) => (
               <div
                 key={index}
@@ -262,7 +326,7 @@ export default function HomePage() {
           </div>
           <div className="text-center mt-8">
             <Link
-              href="/galeria"
+              href="/vrtanie-studni-referencie-fotogaleria"
               className="inline-block bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-md transition-colors"
             >
               Zobraziť celú galériu
@@ -285,17 +349,41 @@ export default function HomePage() {
             {advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="bg-white rounded-md p-6 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.12)] transition-shadow"
+                className="relative overflow-hidden rounded-md p-6 min-h-[210px] shadow-[0_2px_20px_-4px_rgba(0,0,0,0.22)] hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.35)] transition-shadow"
               >
-                <div className="flex items-start gap-3">
-                  <span className="bg-primary text-white rounded-full w-7 h-7 flex items-center justify-center shrink-0 font-bold text-xs">
+                <Image
+                  src={`/images/${advantageCardImages[index % advantageCardImages.length]}`}
+                  alt={`Výhoda vŕtanej studne ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(170deg,rgba(0,0,0,0.28),rgba(0,0,0,0.72))]" />
+
+                <div className="relative z-10 flex items-start gap-3">
+                  <span className="rounded-full w-8 h-8 flex items-center justify-center shrink-0 font-bold text-sm border border-white/65 bg-white/15 text-white">
                     {index + 1}
                   </span>
-                  <div>
-                    <h3 className="font-bold text-dark text-lg mb-2">
+                  <div className="flex-1">
+                    <div className="mb-2 text-white/90">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 14c0 3.866-3.134 7-7 7s-7-3.134-7-7a7 7 0 1114 0z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="font-bold text-white text-lg mb-2">
                       {advantage.title}
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-white/90 text-sm">
                       {advantage.description}
                     </p>
                   </div>
@@ -315,6 +403,24 @@ export default function HomePage() {
           <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
             Od prvej obhliadky až po odovzdanie hotovej studne
           </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            {[
+              "gallery/external-new/vrtanie-studni04.jpg",
+              "gallery/external-new/vrtanie-studni12.jpg",
+            ].map((img, index) => (
+              <div
+                key={index}
+                className="relative h-52 rounded-md overflow-hidden"
+              >
+                <Image
+                  src={`/images/${img}`}
+                  alt={`Vŕtanie studní - postup ${index + 1}`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((item) => (
               <div
@@ -333,8 +439,18 @@ export default function HomePage() {
       </section>
 
       {/* 4 Reasons Section */}
-      <section className="py-16 bg-primary">
-        <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-16 bg-[linear-gradient(140deg,#7f4520_0%,#b66a2f_46%,#5f3218_100%)]">
+        <Image
+          src="/images/gallery/external-new/vrtanie-studni07.jpg"
+          alt=""
+          aria-hidden
+          fill
+          className="object-cover opacity-25"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_24%,rgba(255,236,210,0.28),transparent_40%),radial-gradient(circle_at_86%_78%,rgba(0,0,0,0.36),transparent_48%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(16,11,8,0.64),rgba(182,106,47,0.35),rgba(16,11,8,0.72))]" />
+
+        <div className="relative max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-white mb-10">
             4 dôvody prečo vŕtať s nami
           </h2>
@@ -342,7 +458,7 @@ export default function HomePage() {
             {reasons.map((reason, index) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-md p-6 text-center text-white hover:bg-white/20 transition-colors"
+                className="bg-white/12 border border-white/20 backdrop-blur-sm rounded-md p-6 text-center text-white hover:bg-white/20 transition-colors"
               >
                 <div className="flex justify-center mb-4">{reason.icon}</div>
                 <h3 className="font-bold text-xl mb-2">{reason.title}</h3>
@@ -365,7 +481,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/kontakt"
+              href="/vrtanie-studni-kontakt"
               className="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-4 px-10 rounded-md text-lg transition-colors"
             >
               Kontaktujte nás
@@ -376,8 +492,25 @@ export default function HomePage() {
             >
               0907 872 591
             </a>
+            <a
+              href="tel:+421902681203"
+              className="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-4 px-10 rounded-md text-lg transition-colors"
+            >
+              0902 681 203
+            </a>
           </div>
         </div>
+      </section>
+
+      {/* Hero Fade Into Footer */}
+      <section className="relative h-64 sm:h-80 overflow-hidden">
+        <Image
+          src="/images/gallery/external-new/vrtanie-studni05.jpg"
+          alt="Vŕtanie studní - hero prechod do footeru"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#14110f] via-[#14110f]/68 to-transparent" />
       </section>
     </>
   );

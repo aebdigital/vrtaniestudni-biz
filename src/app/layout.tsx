@@ -1,40 +1,30 @@
-import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import type { Viewport } from "next";
+import { Merriweather, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import OptInPopup from "@/components/OptInPopup";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const sourceSans = Source_Sans_3({
+  variable: "--font-source-sans",
   subsets: ["latin", "latin-ext"],
+  display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Vŕtanie studní | MQM stavebno obchodná spoločnosť",
-    template: "%s | Vŕtanie studní",
-  },
-  description:
-    "Vŕtanie studní lacno. Dopravu neúčtujeme! Garancia nájdenia vody. Profesionálne vŕtanie studní po celom Slovensku od 65 EUR za 1 bm.",
-  keywords: [
-    "vŕtanie studní",
-    "studňa",
-    "vŕtaná studňa",
-    "vŕtanie studní cena",
-    "studňa na kľúč",
-    "voda",
-    "podzemná voda",
-    "Slovensko",
-    "Detva",
-  ],
-  openGraph: {
-    title: "Vŕtanie studní | MQM stavebno obchodná spoločnosť",
-    description:
-      "Vŕtanie studní lacno. Dopravu neúčtujeme! Garancia nájdenia vody.",
-    type: "website",
-    locale: "sk_SK",
-  },
+const merriweather = Merriweather({
+  variable: "--font-merriweather",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "700", "900"],
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#5891e8",
 };
 
 export default function RootLayout({
@@ -44,11 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sk">
-      <body className={`${montserrat.variable} antialiased font-sans`}>
+      <body className={`${sourceSans.variable} ${merriweather.variable} antialiased font-sans`}>
         <SmoothScroll>
           <Header />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          <OptInPopup />
         </SmoothScroll>
       </body>
     </html>

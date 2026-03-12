@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import SeoSchema from "@/components/SeoSchema";
+import { seo, toMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Kontakt",
-  description:
-    "Kontaktujte nás pre vŕtanie studní. MQM stavebno obchodná spoločnosť, s.r.o. Telefón: 0907 872 591, Email: kralik.mato@gmail.com",
-};
+export const metadata: Metadata = toMetadata(seo.kontakt);
 
 export default function KontaktPage() {
   return (
     <>
+      <SeoSchema schema={seo.kontakt.schema} />
+
       {/* Hero Banner */}
-      <section className="bg-primary py-16 pt-20">
+      <section className="hero-band py-16 pt-24">
         <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Kontakt
@@ -33,7 +33,7 @@ export default function KontaktPage() {
 
             <div className="bg-gray-light rounded-md p-6 mb-8">
               <h3 className="font-bold text-lg text-dark mb-4">
-                MQM stavebno obchodná spoločnosť, s.r.o.
+                MQM stavebno obchodná spoločnosť s.r.o.
               </h3>
 
               <div className="space-y-4">
@@ -72,6 +72,12 @@ export default function KontaktPage() {
                       className="font-medium text-primary hover:text-primary-dark transition-colors text-lg"
                     >
                       0907 872 591
+                    </a>
+                    <a
+                      href="tel:+421902681203"
+                      className="block font-medium text-primary hover:text-primary-dark transition-colors text-lg"
+                    >
+                      0902 681 203
                     </a>
                   </div>
                 </div>
@@ -113,9 +119,11 @@ export default function KontaktPage() {
                   <div>
                     <p className="text-sm text-gray-500">Adresa</p>
                     <p className="font-medium text-dark">
-                      M.R.Štefánika 911/53
+                      Vimperská 938/5
                       <br />
-                      962 12, Detva
+                      962 12 Detva
+                      <br />
+                      Slovenská republika
                     </p>
                   </div>
                 </div>

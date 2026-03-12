@@ -1,20 +1,101 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #5891e8;
-  --color-primary-dark: #3a6fc2;
-  --color-primary-light: #e8f0fd;
-  --color-dark: #1a1a1a;
-  --color-gray-light: #f5f5f7;
-  --font-sans: var(--font-montserrat);
+  --color-primary: #b66a2f;
+  --color-primary-dark: #8d4f23;
+  --color-primary-light: #f3e8d9;
+  --color-dark: #151517;
+  --color-gray-light: #f4efe6;
+  --font-sans: var(--font-source-sans);
 }
 
 html {
   scroll-behavior: auto;
+  background: #f8f4ed;
 }
 
 body {
-  background: #ffffff;
-  color: #1a1a1a;
-  font-family: var(--font-montserrat), system-ui, -apple-system, sans-serif;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(182, 106, 47, 0.14), transparent 33%),
+    radial-gradient(circle at 100% 15%, rgba(73, 43, 23, 0.18), transparent 36%),
+    linear-gradient(180deg, #faf7f1 0%, #fffdf9 52%, #f8f2e8 100%);
+  color: #1f1b16;
+  font-family: var(--font-source-sans), "Segoe UI", sans-serif;
+  letter-spacing: 0.002em;
+}
+
+h1,
+h2 {
+  font-family: var(--font-source-sans), "Segoe UI", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-merriweather), Georgia, serif;
+  letter-spacing: 0.03em;
+}
+
+.eyebrow {
+  font-family: "Courier New", ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+}
+
+.bg-white {
+  background-color: #fffdf9;
+}
+
+.bg-gray-light {
+  background:
+    linear-gradient(145deg, rgba(244, 239, 230, 0.96), rgba(255, 251, 242, 0.96));
+}
+
+.hero-band {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(125deg, #18120f 0%, #291d16 48%, #b66a2f 100%);
+}
+
+.hero-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(245, 201, 160, 0.22), transparent 42%),
+    linear-gradient(115deg, rgba(255, 255, 255, 0.08), transparent 42%);
+  pointer-events: none;
+}
+
+.hero-band > * {
+  position: relative;
+  z-index: 1;
+}
+
+.rounded-md {
+  border-radius: 0.5rem;
+}
+
+a,
+button {
+  transition:
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+@media (max-width: 639px) {
+  [class*="max-w-[90%]"][class*="mx-auto"],
+  [class*="max-w-4xl"][class*="mx-auto"] {
+    width: 90vw;
+    max-width: 90vw;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
