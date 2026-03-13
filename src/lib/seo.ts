@@ -12,7 +12,7 @@ export type SeoConfig = {
   canonical: string;
   ogLocale: string;
   ogSiteName: string;
-  ogType: string;
+  ogType: "website" | "article";
   ogTitle: string;
   ogDescription?: string;
   ogUrl: string;
@@ -98,6 +98,8 @@ export const seo = {
 } as const satisfies Record<string, SeoConfig>;
 
 export function toMetadata(config: SeoConfig): Metadata {
+  const resolvedOgType = config.ogType === "article" ? "article" : "website";
+
   return {
     title: config.title,
     description: config.description || undefined,
@@ -108,7 +110,7 @@ export function toMetadata(config: SeoConfig): Metadata {
     openGraph: {
       locale: config.ogLocale,
       siteName: config.ogSiteName,
-      type: config.ogType as unknown as NonNullable<NonNullable<Metadata["openGraph"]>["type"]>,
+      type: resolvedOgType,
       title: config.ogTitle,
       description: config.ogDescription || undefined,
       url: config.ogUrl,
