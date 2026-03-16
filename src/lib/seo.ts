@@ -4,6 +4,8 @@ import informacieSchema from "@/lib/seo-schemas/informacie.json";
 import fotogaleriaSchema from "@/lib/seo-schemas/fotogaleria.json";
 import cenaSchema from "@/lib/seo-schemas/cena.json";
 import kontaktSchema from "@/lib/seo-schemas/kontakt.json";
+import mesta1Schema from "@/lib/seo-schemas/mesta1.json";
+import mesta2Schema from "@/lib/seo-schemas/mesta2.json";
 
 export type SeoConfig = {
   title: string;
@@ -25,7 +27,7 @@ export type SeoConfig = {
 const shared = {
   robots: "max-image-preview:large",
   ogLocale: "sk_SK",
-  ogSiteName: "studne.biz -",
+  ogSiteName: "studne.biz",
   twitterCard: "summary",
 } as const;
 
@@ -94,6 +96,32 @@ export const seo = {
     twitterTitle: "Vŕtanie studní kontakt",
     twitterDescription: "Vŕtanie studní kontakt",
     schema: kontaktSchema as Record<string, unknown>,
+  },
+  mesta1: {
+    ...shared,
+    title: "Vŕtanie studní Žiar nad Hronom, Žarnovica, Banská Štiavnica",
+    description: "Vŕtanie studní Žiar nad Hronom, Žarnovica, Banská Štiavnica",
+    canonical: "https://www.vrtaniestudni.biz/mesta1/",
+    ogType: "article",
+    ogTitle: "Vŕtanie studní Žiar nad Hronom, Žarnovica, Banská Štiavnica",
+    ogDescription: "Vŕtanie studní Žiar nad Hronom, Žarnovica, Banská Štiavnica",
+    ogUrl: "https://www.vrtaniestudni.biz/mesta1/",
+    twitterTitle: "Vŕtanie studní Žiar nad Hronom, Žarnovica, Banská Štiavnica",
+    twitterDescription: "Vŕtanie studní Žiar nad Hronom, Žarnovica, Banská Štiavnica",
+    schema: mesta1Schema as Record<string, unknown>,
+  },
+  mesta2: {
+    ...shared,
+    title: "Vŕtanie studní Lučenec, Rimavská Sobota",
+    description: "Vŕtanie studní Lučenec, Rimavská Sobota",
+    canonical: "https://www.vrtaniestudni.biz/mesta2/",
+    ogType: "article",
+    ogTitle: "Vŕtanie studní Lučenec, Rimavská Sobota",
+    ogDescription: "Vŕtanie studní Lučenec, Rimavská Sobota",
+    ogUrl: "https://www.vrtaniestudni.biz/mesta2/",
+    twitterTitle: "Vŕtanie studní Lučenec, Rimavská Sobota",
+    twitterDescription: "Vŕtanie studní Lučenec, Rimavská Sobota",
+    schema: mesta2Schema as Record<string, unknown>,
   },
 } as const satisfies Record<string, SeoConfig>;
 
