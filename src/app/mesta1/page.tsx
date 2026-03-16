@@ -9,7 +9,7 @@ export const metadata: Metadata = toMetadata(seo.mesta1);
 const services = [
   "Osobný prístup a bezplatné poradenstvo",
   "Hľadanie vody prútikárom",
-  "Vybudovanie studne „šitej" na mieru",
+  "Vybudovanie studne \u201Ešitej\u201C na mieru",
 ];
 
 const reasons = [
