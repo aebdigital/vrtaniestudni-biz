@@ -21,59 +21,27 @@ const benefits = [
   },
 ];
 
-const reasons = [
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: "Od 65 Eur",
-    description: "Vŕtanie už od 65 Eur, najlacnejšie touto technológiou na trhu",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
-    title: "Garancia nájdenia",
-    description: "Garantujeme nájdenie vody — s nami sa Vám nestane, že zostanete bez vody",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-      </svg>
-    ),
-    title: "Doprava zdarma",
-    description: "Privezieme aj odvezieme všetko potrebné k vŕtaniu v rámci celého Slovenska zdarma",
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
-      </svg>
-    ),
-    title: "Studňa na kľúč",
-    description: "Vyvŕtame studňu, urobíme šachtu a tiež prípojku do objektu",
-  },
-];
-
 export default function Mesta2Page() {
   return (
     <>
       <SeoSchema schema={seo.mesta2.schema} />
 
       {/* Hero Banner */}
-      <section className="hero-band py-16 pt-24">
-        <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative min-h-[320px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/gallery/external-new/vrtanie-studni12.jpg"
+            alt="Vŕtanie studní Lučenec, Rimavská Sobota"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(182,106,47,0.35),transparent_40%),linear-gradient(112deg,rgba(10,8,7,0.9)_0%,rgba(22,18,14,0.82)_48%,rgba(45,32,22,0.62)_100%)]" />
+        </div>
+        <div className="relative z-10 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 pt-24">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Vŕtanie studní Lučenec, Rimavská Sobota
           </h1>
-          <p className="mt-4 text-xl text-white/80 max-w-2xl mx-auto">
-            Pre rodiny, firmy aj záhradkárov
-          </p>
         </div>
       </section>
 
@@ -158,29 +126,6 @@ export default function Mesta2Page() {
           </div>
         </section>
       </div>
-
-      {/* 4 Reasons Section */}
-      <section className="relative overflow-hidden py-16 bg-[linear-gradient(140deg,#7f4520_0%,#b66a2f_46%,#5f3218_100%)]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_24%,rgba(255,236,210,0.28),transparent_40%),radial-gradient(circle_at_86%_78%,rgba(0,0,0,0.36),transparent_48%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(16,11,8,0.64),rgba(182,106,47,0.35),rgba(16,11,8,0.72))]" />
-        <div className="relative max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-white mb-10">
-            4 dôvody prečo vŕtať s nami
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {reasons.map((reason, index) => (
-              <div
-                key={index}
-                className="bg-white/12 border border-white/20 backdrop-blur-sm rounded-md p-6 text-center text-white hover:bg-white/20 transition-colors"
-              >
-                <div className="flex justify-center mb-4">{reason.icon}</div>
-                <h3 className="font-bold text-xl mb-2">{reason.title}</h3>
-                <p className="text-white/80 text-sm">{reason.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-16 bg-white">

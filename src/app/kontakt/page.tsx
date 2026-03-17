@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ContactForm from "@/components/ContactForm";
+import Image from "next/image";
 import SeoSchema from "@/components/SeoSchema";
 import { seo, toMetadata } from "@/lib/seo";
 
@@ -11,15 +11,21 @@ export default function KontaktPage() {
       <SeoSchema schema={seo.kontakt.schema} />
 
       {/* Hero Banner */}
-      <section className="hero-band py-16 pt-24">
-        <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative min-h-[320px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/gallery/external-new/vrtanie-studni06.jpg"
+            alt="Kontakt - vŕtanie studní"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(182,106,47,0.35),transparent_40%),linear-gradient(112deg,rgba(10,8,7,0.9)_0%,rgba(22,18,14,0.82)_48%,rgba(45,32,22,0.62)_100%)]" />
+        </div>
+        <div className="relative z-10 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 pt-24">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Kontakt
           </h1>
-          <p className="mt-4 text-xl text-white/80 max-w-2xl mx-auto">
-            Neváhajte nás kontaktovať. Radi Vám poradíme a pripravíme cenovú
-            ponuku.
-          </p>
         </div>
       </section>
 
@@ -28,13 +34,10 @@ export default function KontaktPage() {
           {/* Contact Info */}
           <div>
             <h2 className="text-2xl font-bold text-dark mb-6">
-              Kontaktné údaje
+              MQM stavebno obchodná spoločnosť s.r.o.
             </h2>
 
             <div className="bg-gray-light rounded-md p-6 mb-8">
-              <h3 className="font-bold text-lg text-dark mb-4">
-                MQM stavebno obchodná spoločnosť s.r.o.
-              </h3>
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -157,29 +160,20 @@ export default function KontaktPage() {
               </div>
             </div>
 
-            {/* Google Maps */}
-            <div className="rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.1)] h-80">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10584.98426835783!2d19.41!3d48.56!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47153a58ac5b3b3f%3A0x400f7d1c69770f0!2sDetva!5e0!3m2!1ssk!2ssk!4v1700000000000!5m2!1ssk!2ssk"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa - Detva, Slovensko"
-              />
-            </div>
           </div>
 
-          {/* Contact Form */}
-          <div>
-            <h2 className="text-2xl font-bold text-dark mb-6">
-              Napíšte nám
-            </h2>
-            <div className="bg-gray-light rounded-md p-6">
-              <ContactForm />
-            </div>
+          {/* Google Maps */}
+          <div className="rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.1)] h-[500px]">
+            <iframe
+              src="https://maps.google.com/maps?q=Vimpersk%C3%A1+938%2F5%2C+962+12+Detva%2C+Slovensko&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Mapa - Detva, Slovensko"
+            />
           </div>
         </div>
       </div>

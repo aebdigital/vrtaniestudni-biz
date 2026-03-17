@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import GalleryGrid from "@/components/GalleryGrid";
 import SeoSchema from "@/components/SeoSchema";
 import { seo, toMetadata } from "@/lib/seo";
@@ -29,15 +30,15 @@ const galleryImages = [
   { src: "/images/gallery/vrtanie-studni-18.jpg", alt: "Vŕtanie studní - referencia" },
   { src: "/images/gallery/vrtanie-studni-21.jpg", alt: "Vŕtanie studní - referencia" },
   { src: "/images/gallery/vrtanie-studni-23.jpg", alt: "Vŕtanie studní - referencia" },
-  { src: "/images/gallery/external-new/vrtanie-studni01.jpg", alt: "Vŕtanie studní - externá fotografia" },
   { src: "/images/gallery/external-new/vrtanie-studni03.jpg", alt: "Vŕtanie studní - externá fotografia" },
   { src: "/images/gallery/external-new/vrtanie-studni04.jpg", alt: "Vŕtanie studní - externá fotografia" },
-  { src: "/images/gallery/external-new/vrtanie-studni05.jpg", alt: "Vŕtanie studní - externá fotografia" },
   { src: "/images/gallery/external-new/vrtanie-studni06.jpg", alt: "Vŕtanie studní - externá fotografia" },
   { src: "/images/gallery/external-new/vrtanie-studni07.jpg", alt: "Vŕtanie studní - externá fotografia" },
   { src: "/images/gallery/external-new/vrtanie-studni10.jpg", alt: "Vŕtanie studní - externá fotografia" },
   { src: "/images/gallery/external-new/vrtanie-studni11.jpg", alt: "Vŕtanie studní - externá fotografia" },
   { src: "/images/gallery/external-new/vrtanie-studni12.jpg", alt: "Vŕtanie studní - externá fotografia" },
+  { src: "/images/gallery/external-new/vrtanie-studni01.jpg", alt: "Vŕtanie studní - externá fotografia" },
+  { src: "/images/gallery/external-new/vrtanie-studni05.jpg", alt: "Vŕtanie studní - externá fotografia" },
 ];
 
 export default function GaleriaPage() {
@@ -46,15 +47,21 @@ export default function GaleriaPage() {
       <SeoSchema schema={seo.fotogaleria.schema} />
 
       {/* Hero Banner */}
-      <section className="hero-band py-16 pt-24">
-        <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative min-h-[320px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/gallery/external-new/vrtanie-studni04.jpg"
+            alt="Fotogaléria - vŕtanie studní"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(182,106,47,0.35),transparent_40%),linear-gradient(112deg,rgba(10,8,7,0.9)_0%,rgba(22,18,14,0.82)_48%,rgba(45,32,22,0.62)_100%)]" />
+        </div>
+        <div className="relative z-10 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 pt-24">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Fotogaléria
           </h1>
-          <p className="mt-4 text-xl text-white/80 max-w-2xl mx-auto">
-            Pozrite si naše referencie a realizácie vŕtania studní po celom
-            Slovensku
-          </p>
         </div>
       </section>
 

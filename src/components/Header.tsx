@@ -37,14 +37,14 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           <Link
             href="/"
-            className="flex items-center shrink-0 rounded-md border border-white/15 bg-black/20 px-3 py-2"
+            className="relative flex items-center shrink-0 rounded-lg border-2 border-white/20 bg-[#14110f] px-4 py-3 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.5)] translate-y-4"
           >
             <Image
               src="/images/logo-stavebne-prace.png"
               alt="MQM stavebno obchodná spoločnosť s.r.o."
-              width={180}
-              height={60}
-              className="h-12 w-auto"
+              width={220}
+              height={72}
+              className="h-16 w-auto"
               priority
             />
           </Link>

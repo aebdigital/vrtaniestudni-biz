@@ -6,13 +6,12 @@ import { seo, toMetadata } from "@/lib/seo";
 export const metadata: Metadata = toMetadata(seo.informacie);
 
 const drilledAdvantages = [
-  "Čistejšia a kvalitnejšia voda",
-  "Kratšie trvanie vŕtania",
-  "Silnejší zdroj vody s väčším výdajom",
-  "Minimálne priestorové nároky",
-  "Rýchla realizácia: 1-2 dni",
-  "Lepšie utesnenie proti povrchovej vode pomocou bentonitu",
-  "Nezávislosť od verejného vodovodu a úspora nákladov",
+  "Poväčšine čistejšia a kvalitnejšia voda",
+  "Kratšia doba hĺbenia studne",
+  "Silnejší zdroj vody- väčšia výdatnosť",
+  "Menšie priestorové nároky studne",
+  "Rýchla realizácia studne 1-2 dni",
+  "Ľahšie zatesnenie vrtu proti povrchovej vode Bentonitom",
 ];
 
 export default function InformaciePage() {
@@ -21,15 +20,21 @@ export default function InformaciePage() {
       <SeoSchema schema={seo.informacie.schema} />
 
       {/* Hero Banner */}
-      <section className="hero-band py-16 pt-24">
-        <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative min-h-[320px] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/gallery/external-new/vrtanie-studni03.jpg"
+            alt="Informácie o vŕtaní studní"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(182,106,47,0.35),transparent_40%),linear-gradient(112deg,rgba(10,8,7,0.9)_0%,rgba(22,18,14,0.82)_48%,rgba(45,32,22,0.62)_100%)]" />
+        </div>
+        <div className="relative z-10 max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 text-center py-16 pt-24">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             Informácie o vŕtaní studní
           </h1>
-          <p className="mt-4 text-xl text-white/80 max-w-2xl mx-auto">
-            Všetko, čo potrebujete vedieť pred tým, než sa rozhodnete pre vlastnú
-            studňu
-          </p>
         </div>
       </section>
 
@@ -43,8 +48,7 @@ export default function InformaciePage() {
                   Studňa
                 </h2>
                 <p className="text-gray-700 leading-relaxed">
-                  Je zariadenie na zachytávanie podzemnej vody. Studne sa budujú už od
-                  staroveku. Studne kopali, hĺbili banícnym spôsobom alebo narážali.
+                  Je zariadenie na zachytávanie podzemnej vody. Studne sa budujú už od staroveku. Studne kopali, hĺbili baníckym spôsobom alebo narážali. Na hradoch v stredoveku studne zohrávali dôležitú úlohu v čase bojov, kedy bol hrad odrezaný od iného zdroja vody. Dnes zohrávajú studne dôležitú úlohu pre nezávislé bývanie.
                 </p>
               </div>
 
@@ -52,52 +56,9 @@ export default function InformaciePage() {
                 <h2 className="text-2xl font-bold text-dark mb-4 border-l-2 border-primary pl-4">
                   Do akej hĺbky je treba studňu vŕtať
                 </h2>
-                <div className="bg-gray-light rounded-md p-6 mb-6">
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="text-center p-3">
-                      <div className="text-3xl font-bold text-primary mb-1">
-                        8 - 45 m
-                      </div>
-                      <p className="text-gray-600 text-xs">Rozsah hĺbky vŕtania</p>
-                    </div>
-                    <div className="text-center p-3">
-                      <div className="text-3xl font-bold text-primary mb-1">
-                        20+ m
-                      </div>
-                      <p className="text-gray-600 text-xs">
-                        Minimum pre celoročné používanie
-                      </p>
-                    </div>
-                    <div className="text-center p-3">
-                      <div className="text-3xl font-bold text-primary mb-1">
-                        30+ m
-                      </div>
-                      <p className="text-gray-600 text-xs">
-                        Pre komerčné účely
-                      </p>
-                    </div>
-                  </div>
-                </div>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    Hĺbka vŕtania studne sa pohybuje od 8 do 45 metrov v závislosti od
-                    geologických podmienok a účelu použitia.
-                  </p>
-                  <p>
-                    Pre dlhodobé celoročné použitie odporúčame minimum 20 metrov. Pre
-                    víkendové použitie môže byť hĺbka aj menšia.
-                  </p>
-                  <p>
-                    Pre komerčné účely je vhodná hĺbka nad 30 metrov.
-                  </p>
-                  <p>
-                    <strong>
-                      Väčšinou sa nám podarí vodu nájsť do hĺbky 30 metrov.
-                    </strong>
-                  </p>
-                  <p className="bg-primary-light p-4 rounded-md border-l-4 border-primary">
-                    Podľa aktuálnej legislatívy nie sú do hĺbky 30 metrov potrebné
-                    žiadne administratívne povolenia.
+                    Hĺbka vrtu býva od 8 do 45 metrov v závislosti na objeme čerpanej vody a lokalite. Pre studne, ktoré majú slúžiť dlhodobo sa odporúča vrt aspoň od úrovne od 20 metrov hĺbky, pre víkendovo alebo zriedkavo používané chaty postačuje aj menej, pre firmy sa odporúča nad 30 metrov. Väčšinou sa nám podarí vodu nájsť do hĺbky 30 metrov. Do tejto hĺbky podľa platnej legislatívy nie je nutné robiť administratívu a vybavovať potvrdenia na úradoch.
                   </p>
                 </div>
               </div>
@@ -131,19 +92,7 @@ export default function InformaciePage() {
                 </h2>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    Kvalita vody závisí predovšetkým od lokality a zloženia hornín, cez
-                    ktoré voda prechádza. Podzemná voda sa prirodne filtruje pri prechode
-                    cez rôzne geologické vrstvy.
-                  </p>
-                  <p>
-                    Znečistenie môže spôsobiť blízkosť septických jám, používanie
-                    chemických hnojív v poľnohospodárstve alebo priemyselná činnosť v
-                    okolí.
-                  </p>
-                  <p>
-                    Pri vŕtaní studne je dôležité dodržať dostatočnú vzdialenosť od
-                    potenciálnych zdrojov kontaminácie, aby bola zabezpečená čo
-                    najvyššia kvalita získanej vody.
+                    Kvalita závislí hlavne od umiestnenia studne a tiež od zloženia horniny. Žumpa, poľnohospodárske chemikálie, priemysel a podobné zdroje môžu podzemnú vodu a vodu v studni znečisťovať, takže sa odporúča vŕtať v dostatočnej vzdialenosti od týchto objektov.
                   </p>
                 </div>
               </div>
@@ -154,13 +103,10 @@ export default function InformaciePage() {
                 </h2>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    Vŕtaná studňa je najrozšírenejší typ studne. Vŕtané studne dosahujú
-                    hĺbky väčšie ako 8 metrov s priemerom 100 až 300 mm.
+                    Vŕtaná studňa je najrozšírenejším typom studne. Vŕtaná studňa sa používa najmä vtedy ak je potrebné čerpať vodu z väčších hĺbok ako 8m. Vŕtané studne majú priemer od 100 – 300mm.
                   </p>
                   <p>
-                    Hlavné časti vŕtanej studne sú: pažnica (obkladová rúra),
-                    perforácia (filtrová časť), kalník (usadzovacia zóna) a
-                    stabilizačná vrstva (štrkový obsyp).
+                    Vrt tvorí plášť studne a perforácia ktorá sa nachádza v zvodnelej vrstve podložia, nakonci je kalník. Stabilitu vrtu zabezpečuje aktívna časť. Perforácia sa určuje podľa geologických podmienok lokality.
                   </p>
                 </div>
               </div>
@@ -207,6 +153,9 @@ export default function InformaciePage() {
               />
             </div>
           </div>
+          <p className="text-gray-700 leading-relaxed mt-6">
+            Najväčšou výhodou vŕtanej studne je nezávislosť v zásobovaní vodou od verejného vodovou a úspora finančných prostriedkov.
+          </p>
         </section>
 
         {/* Postup section with photo */}
@@ -222,12 +171,10 @@ export default function InformaciePage() {
                 </span>
                 <div>
                   <h3 className="font-bold text-dark text-lg">
-                    Kontakt telefonicky alebo emailom
+                    Kontaktujte nás
                   </h3>
                   <p className="text-gray-600 mt-1">
-                    Prvý krok je kontaktovať nás telefonicky na číslach 0907
-                    872 591 alebo 0902 681 203, prípadne emailom na
-                    kralik.mato@gmail.com. Radi Vám zodpovieme všetky otázky.
+                    telefonicky alebo e-mailom
                   </p>
                 </div>
               </div>
@@ -239,11 +186,11 @@ export default function InformaciePage() {
                   <h3 className="font-bold text-dark text-lg">
                     Prípravné práce
                   </h3>
-                  <p className="text-gray-600 mt-1">
-                    Obhliadka miesta, lokalizácia vhodného miesta na vŕtanie a
-                    vybavenie potrebných povolení. Posúdime geologické podmienky a
-                    navrhneme optimálne riešenie.
-                  </p>
+                  <div className="text-gray-600 mt-1 space-y-1">
+                    <p>Obhliadka pozemku</p>
+                    <p>Nájdenie zdroju vody</p>
+                    <p>Stavebné povolenia</p>
+                  </div>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -255,8 +202,7 @@ export default function InformaciePage() {
                     Realizácia studne
                   </h3>
                   <p className="text-gray-600 mt-1">
-                    Samotné vŕtacie práce, inštalácia rúr, zásyp, čerpanie a
-                    čistenie. Kompletná realizácia trvá zvyčajne 1-2 dni.
+                    Naším cieľom je spokojný zákazník.
                   </p>
                 </div>
               </div>
@@ -272,30 +218,6 @@ export default function InformaciePage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="bg-primary rounded-md p-8 text-center text-white">
-          <h2 className="text-2xl font-bold mb-4">
-            Máte otázky o vŕtaní studní?
-          </h2>
-          <p className="text-white/80 mb-6">
-            Neváhajte nás kontaktovať. Radi Vám poradíme a pripravíme cenovú
-            ponuku na mieru.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="tel:+421907872591"
-              className="inline-block bg-white text-primary font-bold py-3 px-8 rounded-md hover:bg-gray-100 transition-colors"
-            >
-              Zavolajte nám: 0907 872 591
-            </a>
-            <a
-              href="tel:+421902681203"
-              className="inline-block border border-white bg-transparent text-white font-bold py-3 px-8 rounded-md hover:bg-white/10 transition-colors"
-            >
-              Alebo: 0902 681 203
-            </a>
-          </div>
-        </section>
       </div>
     </>
   );
