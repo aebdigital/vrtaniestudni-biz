@@ -144,76 +144,6 @@ export default function HomePage() {
         </div>
       </ParallaxHero>
 
-      {/* O nás */}
-      <section className="py-16 bg-gray-light">
-        <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-dark mb-6">
-                Vŕtanie studní nám prináša dobrý pocit, pretože našim produktom je vŕtaná studňa s ktorou:
-              </h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
-                <p>
-                  Radi by ste si našli vodu na svojom pozemku, zbavili ručného zavlažovania alebo neboli závislí na verejnom vodovode ste na správnej adrese. Verejné vodovody sú neekonomické a práve preto Vám ponúkame vŕtané studne.
-                </p>
-                <p>
-                  Každý dom potrebuje vodu. Či starý, nový alebo zrekonštruovaný. Ak vo svojej lokalite nemáme verejný vodovod situáciu musíte riešiť vlastnou studňou. A presne tu ste na správnej adrese.
-                </p>
-                <p>
-                  Vŕtanie studní realizujeme na celom Slovensku ale hlavne v mestách Banská Bystrica, Zvolen, Detva a Brezno. Samozrejme aj v okolitých mestách a obciach stredného Slovenska.
-                </p>
-                <p>
-                  Studne tiež vŕtame v{" "}
-                  <Link href="/mesta1" className="text-primary hover:text-primary-dark underline">
-                    Banskej Štiavnici, Žarnovici a Žiari nad Hronom
-                  </Link>.{" "}
-                  Naše realizácie studní môžete vidieť tiež v mestách{" "}
-                  <Link href="/mesta2" className="text-primary hover:text-primary-dark underline">
-                    Lučenec a Rimavská Sobota
-                  </Link>.
-                </p>
-              </div>
-
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-white rounded-md p-5 shadow-[0_1px_10px_-2px_rgba(0,0,0,0.06)]">
-                  <div className="mb-2">
-                    <Image src="/images/1.svg" alt="" width={40} height={40} className="h-10 w-10" />
-                  </div>
-                  <p className="text-dark font-medium">Už doživotne nebudete musieť platiť žiadne náklady za spotrebovanú vodu!</p>
-                </div>
-                <div className="bg-white rounded-md p-5 shadow-[0_1px_10px_-2px_rgba(0,0,0,0.06)]">
-                  <div className="mb-2">
-                    <Image src="/images/2.svg" alt="" width={40} height={40} className="h-10 w-10" />
-                  </div>
-                  <p className="text-dark font-medium">Máte dostatok vody aj v suchých letných mesiacoch</p>
-                </div>
-                <div className="bg-white rounded-md p-5 shadow-[0_1px_10px_-2px_rgba(0,0,0,0.06)]">
-                  <div className="mb-2">
-                    <Image src="/images/3-1.svg" alt="" width={40} height={40} className="h-10 w-10" />
-                  </div>
-                  <p className="text-dark font-medium">Získate kvalitný zdroj pitnej a úžitkovej vody</p>
-                </div>
-                <div className="bg-white rounded-md p-5 shadow-[0_1px_10px_-2px_rgba(0,0,0,0.06)]">
-                  <div className="mb-2">
-                    <Image src="/images/4.svg" alt="" width={40} height={40} className="h-10 w-10" />
-                  </div>
-                  <p className="text-dark font-medium">Ste nezávislý od lokálneho vodovodného systému</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative aspect-[3/4] rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)]">
-              <Image
-                src="/images/gallery/external-new/vrtanie-studni05.jpg"
-                alt="Vŕtanie studní"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Vŕtanie studní zahŕňa */}
       <section className="py-16 bg-white">
         <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
@@ -354,6 +284,135 @@ export default function HomePage() {
                 <p className="text-gray-600 text-sm">{item.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4 dôvody prečo vŕtať s nami */}
+      <section className="relative overflow-hidden py-16 bg-[linear-gradient(140deg,#7f4520_0%,#b66a2f_46%,#5f3218_100%)]">
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(16,11,8,0.64),rgba(182,106,47,0.35),rgba(16,11,8,0.72))]" />
+        <div className="relative max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-white mb-10">
+            4 dôvody prečo vŕtať s nami
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Od 65 Eur",
+                desc: "vŕtanie už od 65 Eur, najlacnejšie touto technológiou na trhu",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Garancia nájdenia",
+                desc: "garantujeme nájdenie vody – s nami sa Vám nestane že zostanete bez vody",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Doprava zdarma",
+                desc: "privezieme aj odvezieme všetko potrebné k vŕtaniu v rámci celého Slovenska zdarma",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                ),
+              },
+              {
+                title: "Studňa na kľúč",
+                desc: "vyvŕtame studňu, urobíme šachtu a tiež prípojku do objektu",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                  </svg>
+                ),
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white/12 border border-white/20 backdrop-blur-sm rounded-md p-6 text-center text-white hover:bg-white/20 transition-colors"
+              >
+                <div className="flex justify-center mb-4">{item.icon}</div>
+                <h3 className="font-bold text-xl mb-2">{item.title}</h3>
+                <p className="text-white/80 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* O nás - text s odkazmi na mestá */}
+      <section className="py-16 bg-gray-light">
+        <div className="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-dark mb-6">
+                Vŕtanie studní nám prináša dobrý pocit, pretože našim produktom je vŕtaná studňa s ktorou:
+              </h2>
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  Radi by ste si našli vodu na svojom pozemku, zbavili ručného zavlažovania alebo neboli závislí na verejnom vodovode ste na správnej adrese. Verejné vodovody sú neekonomické a práve preto Vám ponúkame vŕtané studne.
+                </p>
+                <p>
+                  Každý dom potrebuje vodu. Či starý, nový alebo zrekonštruovaný. Ak vo svojej lokalite nemáme verejný vodovod situáciu musíte riešiť vlastnou studňou. A presne tu ste na správnej adrese.
+                </p>
+                <p>
+                  Vŕtanie studní realizujeme na celom Slovensku ale hlavne v mestách Banská Bystrica, Zvolen, Detva a Brezno. Samozrejme aj v okolitých mestách a obciach stredného Slovenska.
+                </p>
+                <p>
+                  Studne tiež vŕtame v{" "}
+                  <Link href="/mesta1" className="text-primary hover:text-primary-dark underline">
+                    Banskej Štiavnici, Žarnovici a Žiari nad Hronom
+                  </Link>.{" "}
+                  Naše realizácie studní môžete vidieť tiež v mestách{" "}
+                  <Link href="/mesta2" className="text-primary hover:text-primary-dark underline">
+                    Lučenec a Rimavská Sobota
+                  </Link>.
+                </p>
+              </div>
+
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-white rounded-md p-5 shadow-[0_1px_10px_-2px_rgba(0,0,0,0.06)]">
+                  <div className="mb-2">
+                    <Image src="/images/1.svg" alt="" width={40} height={40} className="h-10 w-10" />
+                  </div>
+                  <p className="text-dark font-medium">Už doživotne nebudete musieť platiť žiadne náklady za spotrebovanú vodu!</p>
+                </div>
+                <div className="bg-white rounded-md p-5 shadow-[0_1px_10px_-2px_rgba(0,0,0,0.06)]">
+                  <div className="mb-2">
+                    <Image src="/images/2.svg" alt="" width={40} height={40} className="h-10 w-10" />
+                  </div>
+                  <p className="text-dark font-medium">Máte dostatok vody aj v suchých letných mesiacoch</p>
+                </div>
+                <div className="bg-white rounded-md p-5 shadow-[0_1px_10px_-2px_rgba(0,0,0,0.06)]">
+                  <div className="mb-2">
+                    <Image src="/images/3-1.svg" alt="" width={40} height={40} className="h-10 w-10" />
+                  </div>
+                  <p className="text-dark font-medium">Získate kvalitný zdroj pitnej a úžitkovej vody</p>
+                </div>
+                <div className="bg-white rounded-md p-5 shadow-[0_1px_10px_-2px_rgba(0,0,0,0.06)]">
+                  <div className="mb-2">
+                    <Image src="/images/4.svg" alt="" width={40} height={40} className="h-10 w-10" />
+                  </div>
+                  <p className="text-dark font-medium">Ste nezávislý od lokálneho vodovodného systému</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative aspect-[3/4] rounded-md overflow-hidden shadow-[0_2px_20px_-4px_rgba(0,0,0,0.08)]">
+              <Image
+                src="/images/gallery/external-new/vrtanie-studni05.jpg"
+                alt="Vŕtanie studní"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
